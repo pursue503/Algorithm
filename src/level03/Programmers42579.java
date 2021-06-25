@@ -1,5 +1,7 @@
 package level03;
 
+import java.util.*;
+
 public class Programmers42579 {
 
     public int[] solution(String[] genres, int[] plays) {
