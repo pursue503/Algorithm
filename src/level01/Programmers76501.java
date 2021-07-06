@@ -2,6 +2,12 @@ package level01;
 
 import java.util.Arrays;
 
+
+/**
+ *
+ * 음양 더하기
+ *
+ */
 public class Programmers76501 {
 
     public static void main(String[] args) {
