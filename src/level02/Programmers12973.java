@@ -40,7 +40,6 @@ public class Programmers12973 {
         }
 
         return stringStack.size() == 0 ? 1 : 0;
-
     }
 
     //LinkedList
