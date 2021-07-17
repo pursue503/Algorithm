@@ -21,7 +21,7 @@ public class Programmers12924 {
         int count = 1;
         while (count <= target) {
             int sum = 0;
-            for(int i=count; i<=n; i++) {
+            for(int i=count; i<=target+1; i++) {
                 sum += i;
                 if(sum == n) {
                     answer++;
