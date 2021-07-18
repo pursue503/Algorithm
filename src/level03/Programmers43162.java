@@ -1,5 +1,8 @@
 package level03;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  *
  * 네트워크
@@ -15,6 +18,13 @@ public class Programmers43162 {
         Programmers43162 programmers43162 = new Programmers43162();
 
         System.out.println(programmers43162.solution(3, new int[][]{
+                {1,1,0,1},
+                {1,1,0,0},
+                {0,0,1,0},
+                {1,0,0,1}
+        }));
+
+        System.out.println(solution2(3, new int[][]{
                 {1,1,0,1},
                 {1,1,0,0},
                 {0,0,1,0},
@@ -55,6 +65,48 @@ public class Programmers43162 {
         }
 
         return true;
+    }
+
+    //bfs 탐색
+    public static int solution2(int n, int[][] computers) {
+
+        int answer = 0;
+
+        boolean[] visited = new boolean[n + 1];
+
+        Queue<Integer> queue = new LinkedList<>();
+
+        for(int i=0; i<n; i++) { // 0부터 탐색시작
+            queue.add(i);
+
+            if(!visited[i]) {
+                answer++;
+            }
+            while (!queue.isEmpty()) {
+
+                int x = queue.poll();
+
+                visited[x] = true;
+
+                //자기자신 방문처리
+                computers[x][x] = 0;
+
+                for(int j=0; j<computers[x].length; j++) { // 관련된걸 싹다~ 방문처리시킨다.
+                    if(computers[x][j] == 1 && !visited[j]) { // 처음방문이면 에 방문했던 기록이 없으면
+                        computers[x][j] = 0; //방문처리
+                        queue.add(j); // 한번더 순회하게 넣어줌
+                    } else {
+                        computers[x][j] = 0; //방문철.
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        return answer;
     }
 
 
