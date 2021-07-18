@@ -18,13 +18,19 @@ public class Programmers43162 {
         Programmers43162 programmers43162 = new Programmers43162();
 
         System.out.println(programmers43162.solution(3, new int[][]{
+                {1,1,0},
+                {1,1,0},
+                {0,0,1},
+        }));
+
+        System.out.println(programmers43162.solution(4, new int[][]{
                 {1,1,0,1},
                 {1,1,0,0},
                 {0,0,1,0},
                 {1,0,0,1}
         }));
 
-        System.out.println(solution2(3, new int[][]{
+        System.out.println(solution2(4, new int[][]{
                 {1,1,0,1},
                 {1,1,0,0},
                 {0,0,1,0},
@@ -38,7 +44,7 @@ public class Programmers43162 {
         int answer = 0;
 
         netWork = computers;
-        visited = new  boolean[n +1];
+        visited = new  boolean[n];
 
         for(int i=0; i<n; i++) {
             if(!visited[i]) { // n 번쟤 컴퓨터에 방문한 기록이 없으면 true 로 dfs 실행
@@ -72,7 +78,7 @@ public class Programmers43162 {
 
         int answer = 0;
 
-        boolean[] visited = new boolean[n + 1];
+        boolean[] visited = new boolean[n];
 
         Queue<Integer> queue = new LinkedList<>();
 
