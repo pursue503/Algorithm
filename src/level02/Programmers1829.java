@@ -2,6 +2,11 @@ package level02;
 
 import java.util.Arrays;
 
+/**
+ *
+ * 카카오프렌즈 컬러링북
+ *
+ */
 public class Programmers1829 {
 
     static int[][] pictureArr;
