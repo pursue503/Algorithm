@@ -162,5 +162,5 @@ $RECYCLE.BIN/
 # Project exclude paths
 /.gradle/
 /build/
-coding-test.iml
 .DS_Store
+*.iml
