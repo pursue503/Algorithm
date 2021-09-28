@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class Programmers42577 {
 
     public static void main(String[] args) {
-        System.out.println(solution2(new String[]{"12", "123", "1235", "567", "88"}));
+        System.out.println(solution2(new String[]{"12", "567",  "1235","123", "88"}));
     }
 
     public static boolean solution(String[] phone_book) {
