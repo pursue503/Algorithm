@@ -3,36 +3,11 @@ package baekjoon;
 import java.io.*;
 import java.util.*;
 
-class Node {
-
-    private int x;
-    private int y;
-
-    public Node(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.x, this.y);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        Node node = (Node) obj;
-        return node.x == this.x && node.y == this.y;
-    }
-}
-
+/**
+ *
+ * 백준 치즈
+ *
+ */
 public class BaekJoon2636 {
 
     // 상하좌우
@@ -136,8 +111,39 @@ public class BaekJoon2636 {
         bw.flush();
         br.close();
         bw.close();
+
     } // end main
 
+}
+
+class Node {
+
+    private int x;
+    private int y;
+
+    public Node(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.x, this.y);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Node node = (Node) obj;
+        return node.x == this.x && node.y == this.y;
+    }
 }
 
 
