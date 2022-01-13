@@ -51,8 +51,4 @@ public class LeetCode1 {
 //        return answer;
 //    }
 
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(new LeetCode1().twoSum(new int[]{3, 3}, 6)));
-    }
-
 }
