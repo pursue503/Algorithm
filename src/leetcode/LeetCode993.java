@@ -73,4 +73,67 @@ public class LeetCode993 {
         }
         return null;
     }
+    
+    // 하나의 메소드로
+    public boolean isCousins2(TreeNode root, int x, int y) {
+        int[] answer = new int[4];
+        
+        int count = 0;
+        
+        if (root.val == x) {
+            answer[0] = 0;
+            answer[1] = 0;
+            count ++;
+        }
+        
+        if (root.val == y) {
+            answer[2] = 0;
+            answer[3] = 0;
+            count ++;
+        }
+        
+        if (count == 2) return answer[0] != answer[2] && answer[1] == answer[3];
+
+        Queue<TreeNode> queue = new LinkedList<>();
+
+        queue.add(root);
+
+        Map<Integer, Integer> map = new HashMap<>();
+
+        map.put(root.val, 0);
+
+        while (!queue.isEmpty()) {
+
+            TreeNode treeNode = queue.poll();
+
+            if (treeNode.right != null) {
+                map.put(treeNode.right.val, map.get(treeNode.val) + 1);
+                queue.add(treeNode.right);
+                if (treeNode.right.val == x) {
+                    answer[0] = treeNode.val;
+                    answer[1] = map.get(treeNode.right.val);
+                }
+                if (treeNode.right.val == y) {
+                    answer[2] = treeNode.val;
+                    answer[3] = map.get(treeNode.right.val);
+                }
+            }
+
+            if (treeNode.left != null) {
+                map.put(treeNode.left.val, map.get(treeNode.val) + 1);
+                queue.add(treeNode.left);
+                if (treeNode.left.val == x) {
+                    answer[0] = treeNode.val;
+                    answer[1] = map.get(treeNode.left.val);
+                }
+                if (treeNode.left.val == y) {
+                    answer[2] = treeNode.val;
+                    answer[3] = map.get(treeNode.left.val);
+                }
+            }
+
+        }
+        return answer[0] != answer[2] && answer[1] == answer[3];
+    }
+    
 }
