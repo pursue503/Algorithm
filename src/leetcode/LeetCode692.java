@@ -1,7 +1,6 @@
-package leetcode.study.day1;
+package leetcode;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class LeetCode692 {
     public static void main(String[] args) {

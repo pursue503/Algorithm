@@ -1,4 +1,4 @@
-package leetcode.study.day1;
+package leetcode;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
