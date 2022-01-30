@@ -1,6 +1,7 @@
 package leetcode;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -44,4 +45,24 @@ public class LeetCode1636 {
 
         return answer;
     }
+
+    // stream
+    public int[] frequencySort2(int[] nums) {
+        return Arrays.stream(nums)
+                .boxed()
+                .collect(Collectors.groupingBy(o -> o))
+                .entrySet()
+                .stream()
+                .sorted((o1, o2) -> {
+                    if (o1.getValue().size() == o2.getValue().size()) {
+                        return o2.getKey() - o1.getKey();
+                    }
+
+                    return o1.getValue().size() - o2.getValue().size();
+                })
+                .flatMap(entry -> entry.getValue().stream())
+                .mapToInt(Integer::valueOf)
+                .toArray();
+    }
+
 }
