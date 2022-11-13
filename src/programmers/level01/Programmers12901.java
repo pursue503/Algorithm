@@ -1,4 +1,6 @@
-package level01;
+package programmers.level01;
+
+import java.time.LocalDate;
 
 /**
  * 2016년
@@ -39,6 +41,10 @@ public class Programmers12901 {
         }
 
 
+    }
+
+    public String solution2(int a, int b) {
+        return LocalDate.of(2016, a, b).getDayOfWeek().toString().substring(0, 3);
     }
 
 }
